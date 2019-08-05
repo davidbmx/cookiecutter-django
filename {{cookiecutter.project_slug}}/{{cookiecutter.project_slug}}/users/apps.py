@@ -1,13 +1,10 @@
-from django.apps import AppConfig
-from django.utils.translation import gettext_lazy as _
+"""Users app."""
 
+#Django
+from django.apps import AppConfig
 
 class UsersConfig(AppConfig):
-    name = "{{ cookiecutter.project_slug }}.users"
-    verbose_name = _("Users")
+    """Users app config"""
 
-    def ready(self):
-        try:
-            import {{ cookiecutter.project_slug }}.users.signals  # noqa F401
-        except ImportError:
-            pass
+    name = '{{ cookiecutter.project_slug }}.users'
+    verbose_name = 'Users'
